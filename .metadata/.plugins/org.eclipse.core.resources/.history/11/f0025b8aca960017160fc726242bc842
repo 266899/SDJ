@@ -1,0 +1,47 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class exrcise804 
+{
+	public static void main (String[] args)
+	{
+		Scanner keyboard = new Scanner (System.in);
+		
+		int[] integer;
+		integer = new int[10];
+		int[] count;
+		count = new int[10];
+		
+		ArrayList<Integer> list = new ArrayList<>();
+		
+		System.out.println("Input 10 integers: ");
+		
+		for (int i = 0; i < integer.length; i++) {
+			integer[i] = keyboard.nextInt();
+		}
+		
+		
+		for (int i = 0; i < integer.length; i++) {
+			if (!(list.contains(integer[i]))) {
+				list.add(integer[i]);
+			} 
+		} 
+	
+		for (int i = 0; i < integer.length; i++) {
+			
+			for (int j = 0; j< integer.length ; j++)
+			{
+				if (integer[i] == list.get(j)) {
+				count[i] ++;
+			}
+			}
+			
+		}
+	
+		for (int i = 0; i < integer.length; i++) {
+			System.out.println(list.get(i) + " " + count[i]);
+		}
+		
+		
+	}
+}
